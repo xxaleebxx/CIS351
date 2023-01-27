@@ -9,12 +9,12 @@ import static edu.gvsu.dlunit.DLUnit.*;
  * IMPORTANT:  These test cases do *not* thoroughly test the adder.  You need to
  * re-name this class and add more tests!
  */
-public class SampleSigned16BitAdderTest {
+public class Tests {
 
 
   // The complete list of integers to be tests.
   // (IMPORTANT !!! You need to add to this list !!!)
-  public static final long testIntegers[] = {-32768, -32767, 0, 1, 2, 13, 127, 128, 129, 0x5555, 32766, 32767};
+  public static final long testIntegers[] = {-32768, -32767, -50, -13, -10, -1, 0, 1, 2, 10, 13, 127, 128, 129, 0x5555, 32766, 32767};
 
 
   // Helper method that runs a test for a given pair of integers and a carryIn.
@@ -76,6 +76,16 @@ public class SampleSigned16BitAdderTest {
   }
 
   @Test
+  public void one_zero_false() {
+    verify(1, 0, false);
+  }
+
+  @Test
+  public void one_one_false() {
+    verify(1, 1, false);
+  }
+
+  @Test
   public void zero_zero_true() {
     verify(0, 0, true);
   }
@@ -85,6 +95,15 @@ public class SampleSigned16BitAdderTest {
     verify(0, 1, true);
   }
 
+  @Test
+  public void one_one_true() {
+    verify(1, 1, true);
+  }
+
+  @Test
+  public void one_one_true() {
+    verify(1, 1, true);
+  }
 
   // This is actually rather gross; but, it is an effective way to thoroughly test your adder without
   // having to write hundreds of individual methods.
