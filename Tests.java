@@ -100,11 +100,6 @@ public class Tests {
     verify(1, 1, true);
   }
 
-  @Test
-  public void one_one_true() {
-    verify(1, 1, true);
-  }
-
   // This is actually rather gross; but, it is an effective way to thoroughly test your adder without
   // having to write hundreds of individual methods.
   @Test
