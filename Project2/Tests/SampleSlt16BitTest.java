@@ -71,6 +71,16 @@ public class SampleSlt16BitTest {
   public void negone_one_signed() {
     verify(-1, 1, true);
   }
+  
+  @Test
+  public void one_one_signed() {
+    verify(1, 1, true);
+  }
+  
+  @Test
+  public void negone_negone_signed() {
+    verify(-1, -1, true);
+  }
 
   @Test
   public void zero_zero_unsigned() {
@@ -86,4 +96,36 @@ public class SampleSlt16BitTest {
   public void one_zero_unsigned() {
     verify(1, 0, false);
   }
+  
+   @Test
+  public void zero_negone_unsigned() {
+    verify(0, -1, false);
+  }
+
+  @Test
+  public void negone_zero_unsigned() {
+    verify(-1, 0, false);
+  }
+
+  @Test
+  public void one_negone_unsigned() {
+    verify(1, -1, false);
+  }
+
+  @Test
+  public void negone_one_unsigned() {
+    verify(-1, 1, false);
+  }
+  
+  @Test
+  public void one_one_unsigned() {
+    verify(1, 1, false);
+  }
+  
+  @Test
+  public void negone_negone_unsigned() {
+    verify(-1, -1, false);
+  }
+  
+  
 }
