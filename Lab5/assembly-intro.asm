@@ -32,7 +32,7 @@ monkeyTrouble:
 	# Two arguments: a_smile ($a0), b_smile ($a1)
 	# Return: 1 if in trouble, 0 if not in trouble
 	# t0 = a_smile and b_smile
-	add $t0, $a0, $a1
+	and $t0, $a0, $a1
 	# t1 = !a_smile
 	not $t1, $a0
 	andi $t1, $t1, 1
@@ -43,10 +43,18 @@ monkeyTrouble:
 	and $t3, $t1, $t2
 	# v0 = t0 or t3
 	or $v0, $t0, $t3
-	
 	jr $ra 
 
 sleepIn:
+	# Two arguments: weekday ($a0), vacation ($a1)
+	# Return 1 if we sleep in, 0 if we don't sleep in
+	# t0 = !weekday
+	not $t0, $a0
+	andi $t0, $t0, 1
+
+	# v0 = t0 or vacation
+	or $v0, $t0, $a1
+
 	jr $ra
 
 posNeg:
