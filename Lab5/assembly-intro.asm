@@ -58,4 +58,22 @@ sleepIn:
 	jr $ra
 
 posNeg:
+	#$a0 = a $a1 = b $a2 = negative
+	#$t0 = a < 0
+	slt $t0, $a0, $zero
+	#$t1 = b < 0
+	slt $t1, $a1, $zero
+	#$t3 = t0 and t1
+	and $t3, $t0, $t1
+	#$t4 = t3 and negative
+	and $t4, $t3, $a2
+	#$t5 = t0 XOR t1
+	xor $t5, $t0, $t1
+	#$t6 = not negative
+	not $t6, $a2
+	#$t7 = t5 and t6
+	and $t7, $t5, $t6
+	#$v0 = t7 or t4
+	or $v0, $t7, $t4
+	
 	jr $ra
