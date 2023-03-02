@@ -97,3 +97,34 @@ close10:
         jr $ra
 
 dateFashion:
+    # 2 arguments: you (a0), date (a1)
+    # if date or you >= 8, return 2
+    # else if date or you <= 2, return 0
+    # else, return 1
+
+    addi $t0, $0, 1
+
+    # check if arguments are <= 2
+    addi $t5, $0, 3
+    slt $t1, $a0, $t5
+    slt $t2, $a1, $t5
+    beq $t1, $t0, no
+    beq $t2, $t0, no
+
+    # check if arguments are >= 8
+    addi $t6, $0, 8
+    slt $t3, $a0, $t6
+    slt $t4, $a1, $t6
+    beq $t3, $0, yes
+    beq $t4, $0, yes
+
+    no:
+        addi $v0, $0, 0
+        j ending
+    
+    yes: 
+        addi $v0, $0, 2
+        j ending
+
+    ending:
+        jr $ra
