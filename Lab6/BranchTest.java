@@ -39,22 +39,22 @@ public class BranchTest {
         Assert.assertEquals(0, get(v0));
     }
 
-    // // Write more tests!
+    // Write more tests!
 
 
-    // /******************************************************************
-    //  *
-    //  * Test intMax
-    //  *
-    //  *****************************************************************/
+    /******************************************************************
+     *
+     * Test intMax
+     *
+     *****************************************************************/
 
-    // @Test 
-    // public void intMax_ascending() {
-	// run("intMax", 5, 6, 7);
-	// Assert.assertEquals(7, get(v0));
-    // }
+    @Test 
+    public void intMax_ascending() {
+	    run("intMax", 5, 6, 7);
+	    Assert.assertEquals(7, get(v0));
+    }
 
-    // // Write more tests!
+    // Write more tests!
 
     // /******************************************************************
     //  *
