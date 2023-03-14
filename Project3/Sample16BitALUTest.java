@@ -150,6 +150,11 @@ public class Sample16BitALUTest {
   public void testOr() {
     verifyLogic("or", OpCodes.OR, 0xFF00, 0x0F0F, (a, b) -> a | b);
   }
+  
+  @Test
+  public void testXOr() {
+    verifyLogic("xor", OpCodes.XOR, 0xFF00, 0x0F0F, (a, b) -> a ^ b);
+  }
 
 
 }
