@@ -56,32 +56,32 @@ public class BranchTest {
 
     // Write more tests!
 
-    // /******************************************************************
-    //  *
-    //  * Test close10
-    //  *
-    //  *****************************************************************/
+    /******************************************************************
+     *
+     * Test close10
+     *
+     *****************************************************************/
 
-    // @Test 
-    // public void close10_aClosest() {
-	// run("close10", 8, 13);
-	// Assert.assertEquals(8, get(v0));
-    // }
+    @Test 
+    public void close10_aClosest() {
+	    run("close10", 8, 13);
+	    Assert.assertEquals(8, get(v0));
+    }
 
-    // // Write more tests!
+    // Write more tests!
 
 
-    // /******************************************************************
-    //  *
-    //  * Test dateFashion
-    //  *
-    //  *****************************************************************/
+    /******************************************************************
+     *
+     * Test dateFashion
+     *
+     *****************************************************************/
 
-    // @Test 
-    // public void dateFashion_youOk_dateStylish() {
-	// run("dateFashion", 5, 10);
-	// Assert.assertEquals(2, get(v0));
-    // }
+    @Test 
+    public void dateFashion_youOk_dateStylish() {
+	    run("dateFashion", 5, 10);
+	    Assert.assertEquals(2, get(v0));
+    }
 
     // Write more tests!
 
