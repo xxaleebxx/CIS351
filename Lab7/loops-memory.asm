@@ -7,15 +7,14 @@
 
 #addi $a0, $0, 1
 #ddi $a1, $0, 1
-#addi $a2, $0, 1
 #jal max
 
 #addi $a0, $0, 1
 #addi $a1, $0, 1
 #jal sum13
 
-addi $a0, $0, 3
-addi $a1, $0, 3
+addi $a0, $0, 1
+addi $a1, $0, 1
 jal sum67
 
 
