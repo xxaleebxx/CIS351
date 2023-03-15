@@ -1,5 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.beans.Transient;
 import java.util.function.BiFunction;
 
 import static edu.gvsu.dlunit.DLUnit.*;
@@ -151,5 +153,9 @@ public class Sample16BitALUTest {
     verifyLogic("or", OpCodes.OR, 0xFF00, 0x0F0F, (a, b) -> a | b);
   }
 
+  @Test
+  public void testLui() {
 
+
+  }
 }
