@@ -40,6 +40,10 @@ public class LoopsTest {
 
     Label empty_array = wordData();
 
+    Label same_array0 = wordData(0, 0, 0, 0, 0, 0);
+
+    Label same_array10 = wordData(10, 10, 10, 10, 10, 10);
+
     @Test
     public void max_findsMaximum() {
 	run("max", array1, 9);
@@ -62,6 +66,18 @@ public class LoopsTest {
     public void max_findsMaximum0() {
 	run("max", empty_array, 0);
 	Assert.assertEquals(0, get(v0));
+    }
+
+    @Test
+    public void max_findsMaxSame0() {
+	run("max", same_array0, 6);
+	Assert.assertEquals(0, get(v0));
+    }
+
+    @Test
+    public void max_findsMaxSame10() {
+	run("max", same_array10, 6);
+	Assert.assertEquals(10, get(v0));
     }
 
     // // Write **a lot** more tests.
