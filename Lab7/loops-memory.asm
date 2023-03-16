@@ -65,11 +65,15 @@ max:
         slt $t2, $t0, $a1
         beq $t2, $0, done_max
 
+
         sll $t2, $t0, 2
         add $t2, $t2, $a0
 
         # t3 = array[i]
         lw $t3, 0($t2)
+
+        # set the initial max to the first value of the array (after t3 is loaded with array[0])
+        beq $t0, $0, new_max
 
         # compare array[i] to max, t3 to t1
         ble $t1, $t3, new_max
