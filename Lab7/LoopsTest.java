@@ -34,10 +34,34 @@ public class LoopsTest {
      *
      ******************************************************************/
 
+    Label sum67_array1 = wordData(14, 6, 2, 3, 4, 7, 9, 10);
+
+    Label sum67_array2 = wordData(6, 2, 3, 4, 7, 9, 10);
+
+    Label empty_array = wordData();
+
     @Test
     public void max_findsMaximum() {
 	run("max", array1, 9);
 	Assert.assertEquals(9, get(v0));
+    }
+
+    @Test
+    public void max_findsMaximum2() {
+	run("max", sum67_array1, 8);
+	Assert.assertEquals(14, get(v0));
+    }
+
+    @Test
+    public void max_findsMaximum3() {
+	run("max", sum67_array2, 7);
+	Assert.assertEquals(10, get(v0));
+    }
+
+    @Test
+    public void max_findsMaximum0() {
+	run("max", empty_array, 0);
+	Assert.assertEquals(0, get(v0));
     }
 
     // // Write **a lot** more tests.
@@ -72,7 +96,7 @@ public class LoopsTest {
      *
      ******************************************************************/
 
-    Label sum67_array1 = wordData(14, 6, 2, 3, 4, 7, 9, 10);
+    //Label sum67_array1 = wordData(14, 6, 2, 3, 4, 7, 9, 10);
 
     @Test
     public void sum67_handlesOneRun() {
