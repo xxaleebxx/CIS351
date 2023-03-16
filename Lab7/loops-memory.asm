@@ -105,16 +105,22 @@ sum13:
     addi $t5, $0, 0
 
     for13:
-        beq $t4, $a1, end_array13
-        addi $t4, $t4, 1
-        lw $t5, 0($a0)
+        
+        bge $t4, $a1, end_array13
+        
+        
+        sll $t0, $t4, 2
+        add $t0, $t0, $a0
+
+        lw $t5, 0($t0)
+        
         beq $t5, $a3, unlucky
         add $a2, $a2, $t5
-        addi $a0, $a0, 4
+
+        addi $t4, $t4, 1
         j for13
 
         unlucky:
-            addi $a0, $a0, 8
             addi $t4, $t4, 2
             j for13
 
