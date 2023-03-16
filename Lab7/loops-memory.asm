@@ -1,24 +1,9 @@
 .globl indexOf max sum13 sum67
 .text
 
-<<<<<<< HEAD
-#addi $a0, $0, 1
-#addi $a1, $0, 1
-#jal indexOf
-
-#addi $a0, $0, 1
-#addi $a1, $0, 1
-#addi $a2, $0, 1
-#jal max
-
-#addi $a0, $0, 1
-#addi $a1, $0, 1
-#jal sum13
-=======
 addi $a0, $0, 1
 addi $a1, $0, 1
 jal indexOf
->>>>>>> be982d6fb14ef2a474a903401f27bba0f8b9f562
 
 addi $a0, $0, 1
 addi $a1, $0, 1
@@ -64,9 +49,6 @@ addi $a3, $0, 0
 
 
 max:
-<<<<<<< HEAD
-    jr $ra
-=======
     # two arguments: int[] array (a0), length (a1)
     # return: largest value in the array
 
@@ -106,18 +88,47 @@ max:
     done_max:
         addi $v0, $t1, 0
         jr $ra
->>>>>>> be982d6fb14ef2a474a903401f27bba0f8b9f562
 
 
 sum13:
 
+# $a0 = int[] nums
+# $a1 = size
+# $a2 = sum
+# $a3 = 13
+# $t4 = count
+# $t5 = array[i]
+
+    addi $a2, $0, 0
+    addi $a3, $0, 13
+    addi $t4, $0, 0
+    addi $t5, $0, 0
+
+    for13:
+        beq $a1, $t4, end_array13
+        addi $t4, $t4, 1
+        lw $t5, 0($a0)
+        beq $t5, $a3, unlucky
+        add $a2, $a2, $t5
+        addi $a0, $a0, 4
+        j for13
+
+        unlucky:
+            addi $a0, $a0, 8
+            addi $t4, $t4, 2
+            j for13
+
+    empty_array:
+        addi $v0, $0, 0
+        jr $ra
+
+    end_array13:
+        add $v0, $0, $a2
+        jr $ra
+
 
 
 sum67:
-<<<<<<< HEAD
-    jr $ra
-
-=======
     # two arguments: int[] array (a0), size (a1)
     # return: sum of values in the array, except for sections of of numbers start at 6 and ending at 7
 
@@ -176,5 +187,3 @@ sum67:
     done_67:
         addi $v0, $t1, 0
         jr $ra
->>>>>>> be982d6fb14ef2a474a903401f27bba0f8b9f562
-
