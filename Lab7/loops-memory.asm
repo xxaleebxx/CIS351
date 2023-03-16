@@ -105,7 +105,7 @@ sum13:
     addi $t5, $0, 0
 
     for13:
-        beq $a1, $t4, end_array13
+        beq $t4, $a1, end_array13
         addi $t4, $t4, 1
         lw $t5, 0($a0)
         beq $t5, $a3, unlucky
