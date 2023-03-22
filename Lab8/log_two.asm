@@ -15,4 +15,19 @@ syscall
 
 log_two:
     //code here
-    
+    # handle base cases
+    addi $t0, $0, $1
+    beq $a0, $t0, base_case_1
+
+    slt $t1, $a0, $0
+    beq $t1, $t0, base_case_neg
+
+
+    base_case_1:
+        addi $v0, $0, 0
+        jr $ra
+
+
+    base_case_neg:
+        addi $v0, $0, -1
+        jr $ra
